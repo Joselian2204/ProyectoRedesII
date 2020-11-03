@@ -14,7 +14,31 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
 
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyDZnB8bL8hitnwxGy-jL_-arteXipVRX6Y",
+            authDomain: "redesii-26e1f.firebaseapp.com",
+            databaseURL: "https://redesii-26e1f.firebaseio.com",
+            projectId: "redesii-26e1f",
+            storageBucket: "redesii-26e1f.appspot.com",
+            messagingSenderId: "427085273596",
+            appId: "1:427085273596:web:1930bc156d216118557a79",
+            measurementId: "G-37R33P2DR6"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        </script>
+        
+    <script src="script.js" type="text/javascript"></script>
     <title>Document</title>
 </head>
 
@@ -44,6 +68,7 @@ function mostrarPassword(){
 
 <body>
     <div class="login-div">
+        <div >
         <br>
         <div class="row center-align">
             <img src="images/logoggoogle.png" width="72" height="25">
@@ -70,7 +95,7 @@ algo@gmail.com
                 <a href="#" class="link"><b>¿Has olvidado tu contraseña?</b></a>
             </div>
             <div class="col s4 right-align">
-                <button class="boton">
+                <button class="boton" id="btnpass">
                     <b>Siguiente</b>
                 </button>
             </div>
@@ -81,4 +106,5 @@ algo@gmail.com
 <br>
     </div>
 </body>
+<div class="cargando" hidden></div>
 </html>
